@@ -1,0 +1,27 @@
+.left-bar {
+  width: 120px;
+  height: calc(100vh - 91px);
+  background-color: #020203;
+
+  .layout-icon {
+    height: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .left-title {
+    height: 30%;
+    display: flex;
+    align-items: center;
+
+    p {
+      position: absolute;
+      bottom: 7rem;
+      font-size: 12px;
+      color: white;
+      transform: rotate(-90deg);
+      padding-bottom: 1rem;
+    }
+  }
+}

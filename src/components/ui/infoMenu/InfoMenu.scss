@@ -1,0 +1,36 @@
+.info-menu-box {
+  background-color: #fbfbfb;
+  border-radius: 5px;
+  display: flex;
+  padding: 1.2rem 0rem 1.2rem 1.2rem;
+
+  .icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+  }
+
+  .layout-text {
+    display: flex;
+    align-items: center;
+    .text {
+      display: flex;
+      flex-direction: column;
+      padding-left: 1rem;
+      .text-kcal {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: 0 0 5px 0;
+      }
+
+      .text-title {
+        color: grey;
+        font-size: 0.8rem;
+        margin: 0;
+      }
+    }
+  }
+}
