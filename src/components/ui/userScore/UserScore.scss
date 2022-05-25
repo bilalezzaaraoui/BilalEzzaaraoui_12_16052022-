@@ -1,0 +1,21 @@
+.score-box {
+  background-color: #fbfbfb;
+  border-radius: 5px;
+  width: 100%;
+  height: 200px;
+  position: relative;
+  border-radius: 10px;
+
+  .score-title {
+    position: absolute;
+    top: 3%;
+    left: 10%;
+
+    p {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin: 0;
+    }
+  }
+}

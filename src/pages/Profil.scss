@@ -6,7 +6,7 @@
     height: 100%;
     margin: 0rem auto 1rem;
 
-    h1 {
+    .title {
       color: black;
       font-weight: 500;
       font-size: 40px;
@@ -17,7 +17,7 @@
       }
     }
 
-    p {
+    .success {
       font-size: 18px;
       font-weight: 400;
       margin-bottom: 2rem;
@@ -25,7 +25,7 @@
 
     .box-layout {
       width: 100%;
-      background-color: red;
+      // background-color: red;
       display: grid;
       grid-template-columns: 3fr 1fr;
       column-gap: 1rem;

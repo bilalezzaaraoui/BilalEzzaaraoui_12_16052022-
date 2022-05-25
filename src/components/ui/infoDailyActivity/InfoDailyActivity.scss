@@ -3,4 +3,49 @@
   border-radius: 5px;
   width: 100%;
   height: 260px;
+  display: flex;
+  flex-direction: column;
+
+  .info-activity-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .daily-activities {
+      padding: 1rem;
+
+      h3 {
+        font-size: 1rem;
+        color: #20253a;
+      }
+    }
+
+    .body-info {
+      display: flex;
+
+      .first,
+      .second {
+        padding-right: 1.5rem;
+        display: flex;
+        align-items: center;
+
+        .circle {
+          margin-right: 0.3rem;
+        }
+
+        p {
+          color: #74798c;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  h3 {
+    margin: 0;
+  }
+  .chart-layout {
+    flex: 1;
+    width: 100%;
+  }
 }
