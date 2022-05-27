@@ -5,6 +5,7 @@ import {
   PolarAngleAxis,
   ResponsiveContainer,
 } from "recharts";
+import PropTypes from "prop-types";
 import "./UserPerformance.scss";
 
 const UserPerformance = (props) => {
@@ -60,3 +61,7 @@ const UserPerformance = (props) => {
 };
 
 export default UserPerformance;
+
+UserPerformance.propTypes = {
+  data: PropTypes.object,
+};

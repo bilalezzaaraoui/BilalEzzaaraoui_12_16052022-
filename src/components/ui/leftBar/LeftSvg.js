@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import "./LeftSvg.scss";
 
 const LeftSvg = (props) => {
@@ -9,3 +10,7 @@ const LeftSvg = (props) => {
 };
 
 export default LeftSvg;
+
+LeftSvg.propTypes = {
+  image: PropTypes.string,
+};

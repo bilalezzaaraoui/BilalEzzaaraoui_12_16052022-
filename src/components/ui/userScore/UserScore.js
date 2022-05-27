@@ -5,8 +5,15 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import "./UserScore.scss";
 
+/**
+ * Updates responsiveness based on screen width
+ * @param {string} value1 - Value choosen if the width of the screen is up to 1340
+ * @param {string} value2 - Value choosen if the width of the screen is down to 1340
+ * @returns
+ */
 const responsiveString = (value1, value2) =>
   window.innerWidth > 1340 ? value1 : value2;
 
@@ -78,3 +85,7 @@ const UserScore = (props) => {
 };
 
 export default UserScore;
+
+UserScore.propTypes = {
+  data: PropTypes.number,
+};

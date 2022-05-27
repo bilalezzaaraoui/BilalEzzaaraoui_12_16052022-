@@ -9,20 +9,28 @@ import InfoMenu from "../components/ui/infoMenu/InfoMenu";
 import AverageSessions from "../components/ui/averageSessions/AverageSessions";
 import UserPerformance from "../components/ui/userPerformance/UserPerformance";
 import UserScore from "../components/ui/userScore/UserScore";
+import Performance from "../components/class/Performance";
+import DailyActivities from "../components/class/DailyActivities";
+import SessionLength from "../components/class/SessionLength";
 import "./Profil.scss";
 
-const Profil = (props) => {
+const Profil = () => {
   const [data, setData] = useState([]);
   const { id } = useParams();
 
   const number = id;
-  console.log(number);
   useEffect(() => {
     const fetchData = async (number) => {
-      const userInfoObject = await Request.GetAllUserInfo(number);
-      const userPerformanceObject = await Request.GetUserPerformance(number);
-      const userActivity = await Request.GetUserActivity(number);
-      const userAverageSessions = await Request.GetUserAverageSessions(number);
+      const userInfoObject = await Request.GetAllUserInfo(number, "json");
+      const userPerformanceObject = await Request.GetUserPerformance(
+        number,
+        "json"
+      );
+      const userActivity = await Request.GetUserActivity(number, "json");
+      const userAverageSessions = await Request.GetUserAverageSessions(
+        number,
+        "json"
+      );
 
       const dataModel = {
         userInfos: userInfoObject,
@@ -30,8 +38,6 @@ const Profil = (props) => {
         userActivity: userActivity,
         userAverageSessions: userAverageSessions,
       };
-
-      console.log(dataModel);
 
       const userData = {
         id: dataModel.userInfos.id,
@@ -46,15 +52,22 @@ const Profil = (props) => {
           lipid: dataModel.userInfos.keyData.lipidCount,
         },
 
-        sessions: dataModel.userActivity.sessions,
-        averageSessions: dataModel.userAverageSessions.sessions,
+        sessions: dataModel.userActivity.sessions.map(
+          (item) => new DailyActivities(item)
+        ),
+        averageSessions: dataModel.userAverageSessions.sessions.map(
+          (item) => new SessionLength(item)
+        ),
         performance: {
-          data: dataModel.userPerformance.data,
+          data: dataModel.userPerformance.data.map(
+            (item) => new Performance(item)
+          ),
           kind: dataModel.userPerformance.kind,
         },
       };
 
       const user = new User(userData);
+      console.log(user);
 
       setData([user]);
     };
@@ -85,10 +98,7 @@ const Profil = (props) => {
                   <InfoDailyActivity sessions={finalData.sessions} />
                 </div>
                 <div className="info-activity">
-                  <AverageSessions
-                    user={number}
-                    data={finalData.averageSessions}
-                  />
+                  <AverageSessions data={finalData.averageSessions} />
                   <UserPerformance data={finalData.performance} />
                   <UserScore data={finalData.score} />
                 </div>
@@ -106,6 +116,20 @@ const Profil = (props) => {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </Fragment>
+    );
+  }
+
+  if (data.length <= 0) {
+    return (
+      <Fragment>
+        <Header />
+        <div className="flex-layout">
+          <LeftBar />
+          <div className="error-layout">
+            <h1 className="error-title">Erreur 404</h1>
           </div>
         </div>
       </Fragment>

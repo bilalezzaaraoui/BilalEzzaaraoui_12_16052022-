@@ -3,6 +3,11 @@ import Logo from "../../assets/img/logo.svg";
 import "./Header.scss";
 
 const Header = () => {
+  /**
+   * Not refreshing the page
+   * @param {event} e - Event
+   * @returns {void}
+   */
   const notRefresh = (e) => e.preventDefault();
   return (
     <header>

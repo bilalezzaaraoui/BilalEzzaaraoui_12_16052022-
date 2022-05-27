@@ -7,6 +7,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import Circle from "../circle/Circle";
 
@@ -105,6 +106,13 @@ const InfoDailyActivity = (props) => {
   );
 };
 
+/**
+ * Customize the tooltip
+ * @param {object} - An Object
+ * @param {boolean} - Active
+ * @param {array} - Value of the tooltip
+ * @returns {JSX}
+ */
 function CustomTooltip({ active, payload }) {
   if (active && payload) {
     return (
@@ -135,3 +143,11 @@ const TooltipLine = styled.p`
   background: ${(props) => props.background};
 `;
 export default InfoDailyActivity;
+
+InfoDailyActivity.propTypes = {
+  sessions: PropTypes.array,
+};
+
+TooltipLine.propTypes = {
+  background: PropTypes.string,
+};

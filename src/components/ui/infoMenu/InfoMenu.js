@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import "./InfoMenu.scss";
 
 const InfoMenu = (props) => {
@@ -17,3 +18,10 @@ const InfoMenu = (props) => {
 };
 
 export default InfoMenu;
+
+InfoMenu.propTypes = {
+  color: PropTypes.string,
+  image: PropTypes.string,
+  energy: PropTypes.number,
+  title: PropTypes.string,
+};

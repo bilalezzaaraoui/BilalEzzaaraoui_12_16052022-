@@ -7,6 +7,7 @@ import {
   Line,
   ResponsiveContainer,
 } from "recharts";
+import PropTypes from "prop-types";
 import "./AverageSessions.scss";
 
 const AverageSessions = (props) => {
@@ -86,3 +87,7 @@ const AverageSessions = (props) => {
 };
 
 export default AverageSessions;
+
+AverageSessions.propTypes = {
+  data: PropTypes.array,
+};
