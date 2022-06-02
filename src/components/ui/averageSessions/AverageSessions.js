@@ -1,3 +1,4 @@
+import React from "react";
 import {
   LineChart,
   CartesianGrid,
@@ -9,6 +10,21 @@ import {
 } from "recharts";
 import PropTypes from "prop-types";
 import "./AverageSessions.scss";
+
+/**
+ * Component to display average session duration.
+ *
+ * @component
+ * @example
+ * const arrCounter = [
+    {"day": 1, // Day of the week
+    "sessionLength": 30 // Length of the workout
+  }
+]
+ * return (
+ *   <AverageSessions data={arrCounter}  />
+ * )
+ */
 
 const AverageSessions = (props) => {
   const lenght = props.data;
@@ -89,5 +105,5 @@ const AverageSessions = (props) => {
 export default AverageSessions;
 
 AverageSessions.propTypes = {
-  data: PropTypes.array,
+  data: PropTypes.array.isRequired,
 };

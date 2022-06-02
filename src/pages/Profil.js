@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { React, Fragment, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import * as Request from "../assets/data/HttpRequest";
 import Header from "../components/layout/Header";
@@ -14,11 +14,23 @@ import DailyActivities from "../components/class/DailyActivities";
 import SessionLength from "../components/class/SessionLength";
 import "./Profil.scss";
 
+/**
+ * Component to display the profil page.
+ *
+ * @component
+ * @example
+ *
+ * return (
+ *   <Profil />
+ * )
+ */
+
 const Profil = () => {
   const [data, setData] = useState([]);
   const { id } = useParams();
 
   const number = id;
+
   useEffect(() => {
     const fetchData = async (number) => {
       const userInfoObject = await Request.GetAllUserInfo(number, "json");
@@ -67,7 +79,6 @@ const Profil = () => {
       };
 
       const user = new User(userData);
-      console.log(user);
 
       setData([user]);
     };

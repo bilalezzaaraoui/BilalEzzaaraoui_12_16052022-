@@ -1,5 +1,24 @@
+import React from "react";
 import PropTypes from "prop-types";
 import "./InfoMenu.scss";
+
+/**
+ * Component to display nutritional information.
+ *
+ * @component
+ * @example
+ * 
+ * const data = {
+ *  color: "#fffff", // Color of the menu
+ *  image: "http://localhost:3001/static/media/energy.25fef86ed5860200bdf90f9cd185e1e3.svg", // Image of  the menu
+ *  energy: 240, // Amount of the menu
+ *  title: "Proteines" // Title of the menu
+ * };
+
+ * return (
+ *   <InfoMenu color={data.color} image={data.image} energy={data.energy} title={data.title} />
+ * )
+ */
 
 const InfoMenu = (props) => {
   return (
@@ -9,7 +28,10 @@ const InfoMenu = (props) => {
       </div>
       <div className="layout-text">
         <div className="text">
-          <h3 className="text-kcal">{props.energy}</h3>
+          <h3 className="text-kcal">
+            {props.energy}
+            {props.title === "Calories" ? "kCal" : "g"}
+          </h3>
           <p className="text-title">{props.title}</p>
         </div>
       </div>
@@ -20,8 +42,8 @@ const InfoMenu = (props) => {
 export default InfoMenu;
 
 InfoMenu.propTypes = {
-  color: PropTypes.string,
-  image: PropTypes.string,
-  energy: PropTypes.number,
-  title: PropTypes.string,
+  color: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  energy: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
 };

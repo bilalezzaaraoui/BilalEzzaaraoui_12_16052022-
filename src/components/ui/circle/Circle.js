@@ -1,5 +1,17 @@
+import React from "react";
 import PropTypes from "prop-types";
 import "./Circle.scss";
+
+/**
+ * Component to display a circle filled with color.
+ *
+ * @component
+ * @example
+ * const colorValue = "#ffff" // Color of the circle
+ * return (
+ *   <Circle color={colorValue}  />
+ * )
+ */
 
 const Circle = (props) => {
   return (
@@ -8,7 +20,7 @@ const Circle = (props) => {
 };
 
 Circle.propTypes = {
-  color: PropTypes.string,
+  color: PropTypes.string.isRequired,
 };
 
 export default Circle;

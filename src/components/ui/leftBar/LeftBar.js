@@ -1,9 +1,16 @@
+import React from "react";
 import Bike from "../../../assets/img/leftBar/bike.svg";
 import Musculation from "../../../assets/img/leftBar/musculation.svg";
 import Natation from "../../../assets/img/leftBar/natation.svg";
 import Yoga from "../../../assets/img/leftBar/yoga.svg";
 import "./LeftBar.scss";
 import LeftSvg from "./LeftSvg";
+
+/**
+ * Component to display the left bar.
+ *
+ * @component
+ */
 
 const LeftBar = () => {
   const imgArr = [Yoga, Natation, Bike, Musculation];

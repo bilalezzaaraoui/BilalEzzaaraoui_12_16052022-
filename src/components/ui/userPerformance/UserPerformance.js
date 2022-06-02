@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Radar,
   RadarChart,
@@ -22,6 +23,7 @@ const UserPerformance = (props) => {
 
   const result = [];
   data.forEach((item) => {
+    // eslint-disable-next-line
     activityInOrder.find((element) => {
       if (item.kind === Number(element[0])) {
         result.push({ value: item.value, kind: element[1] });
@@ -63,5 +65,5 @@ const UserPerformance = (props) => {
 export default UserPerformance;
 
 UserPerformance.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.object.isRequired,
 };

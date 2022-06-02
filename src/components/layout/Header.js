@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import React from "react";
 import Logo from "../../assets/img/logo.svg";
 import "./Header.scss";
 
@@ -18,7 +19,7 @@ const Header = () => {
         <nav className="nav-menu">
           <ul>
             <li>
-              <a href="" onClick={notRefresh}>
+              <a href="#" onClick={notRefresh}>
                 Accueil
               </a>
             </li>

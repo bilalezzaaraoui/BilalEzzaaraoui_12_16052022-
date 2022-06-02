@@ -1,3 +1,4 @@
+import React from "react";
 import {
   BarChart,
   Bar,
@@ -13,9 +14,26 @@ import Circle from "../circle/Circle";
 
 import "./InfoDailyActivity.scss";
 
+/**
+ * Component to display daily activities.
+ *
+ * @component
+ * @example
+ * const data = 
+  {
+  day: "2020-07-01", // Day of the activity
+  kilogram: 80, // Weight on day of activity
+  calories: 240 // CCalories burned through activity
+};
+
+ * return (
+ *   <InfoDailyActivity sessions={data}  />
+ * )
+ */
+
 const InfoDailyActivity = (props) => {
-  // Compteur
   const lenght = props.sessions;
+  console.log(lenght);
   let counter = 0;
   const arrCounter = lenght.map((item) => {
     return {
@@ -145,9 +163,9 @@ const TooltipLine = styled.p`
 export default InfoDailyActivity;
 
 InfoDailyActivity.propTypes = {
-  sessions: PropTypes.array,
+  sessions: PropTypes.array.isRequired,
 };
 
 TooltipLine.propTypes = {
-  background: PropTypes.string,
+  background: PropTypes.string.isRequired,
 };
