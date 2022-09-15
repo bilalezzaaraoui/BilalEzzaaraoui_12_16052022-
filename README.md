@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# SportSee - Juillet 2021
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/bc73e681d0ed4af7a521258d88236e8e)](https://www.codacy.com/gh/logic-fabric/sportsee/dashboard?utm_source=github.com&utm_medium=referral&utm_content=logic-fabric/sportsee&utm_campaign=Badge_Grade)
 
-## Available Scripts
+Code source du **Projet 12** - **_Développez un tableau de bord d'analytics avec React_** du parcours **Développeur Front-end** d'_OpenClassrooms_.
 
-In the project directory, you can run:
+## Page de démonstration
 
-### `npm start`
+[![Netlify Status](https://api.netlify.com/api/v1/badges/375faf60-fb45-40de-a189-aebe05883830/deploy-status)](https://app.netlify.com/sites/hopeful-mcclintock-f9bb9e/deploys)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Un rendu statique de ce code, s'appuyant sur une _mocked_ API (branche `mocked-api-version`), est accessible via un [déploiement Netlify](https://hopeful-mcclintock-f9bb9e.netlify.app/).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation (_english below_)
 
-### `npm test`
+### Prérequis
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [NodeJS (**version 12.18**)](https://nodejs.org/en/)
+- [npm](https://www.npmjs.com/)
 
-### `npm run build`
+### Installation et lancement du _back-end_
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Cloner le repo du _back-end_ de _SportSee_ :
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`git clone https://github.com/logic-fabric/sportsee-api.git`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+En se plaçant dans ce repo du _back-end_, installer ses dépendances :
 
-### `npm run eject`
+`npm install`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Lancer le _back-end_ sur le port 3000 (port par défaut) :
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`npm run start`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Installation et lancement du _front-end_
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Cloner le présent repo du _front-end_ de _SportSee_ :
 
-## Learn More
+`git clone https://github.com/logic-fabric/LoicMangin_12_14072021.git`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+En se plaçant dans ce repo du _front-end_, installer ses dépendances :
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+`npm install`
 
-### Code Splitting
+Lancer le _front-end_ sur le port 3001 :
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+`npm start`
 
-### Analyzing the Bundle Size
+Le _front-end_ est alors consultable à l'URL `http://localhost:3001`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### N.B. :
 
-### Making a Progressive Web App
+- l'API de _SportSee_ ne fournit des données que pour les utilisateurs d'id 12 et 18.
+- l'utilisateur 18 a un rendu alternatif du diagramme "Durée moyenne des sessions", plus pertinent que celui de la [maquette Figma](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Installation (_english version_)
 
-### Advanced Configuration
+### Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- [NodeJS (**version 12.18**)](https://nodejs.org/en/)
+- [npm](https://www.npmjs.com/)
 
-### Deployment
+### Installing and launching back-end
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Clone the repository of _SportSee_ back-end:
 
-### `npm run build` fails to minify
+`git clone https://github.com/logic-fabric/sportsee-api.git`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Inside this back-end repository, install dependencies:
+
+`npm install`
+
+Launch back-end on port 3000 (default port):
+
+`npm run start`
+
+### Installing and launching front-end
+
+Clone the repository of _SportSee_ front-end:
+
+`git clone https://github.com/logic-fabric/LoicMangin_12_14072021.git`
+
+Inside this front-end repository, install dependencies:
+
+`npm install`
+
+Launch front-end on port 3001:
+
+`npm start`
+
+Front-end is now rendered at URL `http://localhost:3001`.
+
+### N.B.:
+
+- _SportSee_ API only contains data for users with id 12 and 18.
+- user 18 has an alternative version of the chart "Sessions average duration", more relevant than the one on the [Figma mock-up](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR).
